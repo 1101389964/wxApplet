@@ -1,0 +1,30 @@
+<!-- pages/moview-detail/index.wxml -->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+<view>
+  <!-- autoplay为是否自动播放video -->
+  <video class="video" src="{{mvUrl}}" direction="{{direction}}" title="{{detail.name}}"></video>
+  <view class="container">
+    <view class="detail">
+      <view class="title">{{mvDetail.name}}</view>
+      <view class="message">
+        <view class="author">{{mvDetail.artistName}}</view>
+        <view class="time">{{format.getCount(mvDetail.playCount)}} {{mvDetail.publishTime}}</view>
+      </view>
+    </view>
+    <view class="related">
+      <view class="title">相关视频</view>
+      <view class="relatedItem" wx:for="{{mvRelated}}" wx:key="vid">
+        <view class="box" bindtap="jumpTarget" data-id="{{item.vid}}">
+          <view class="cover">
+            <image class="img" src="{{item.coverUrl}}" mode="aspectFit" />
+            <view class="duration">{{format.getCount(item.durationms)}}</view>
+          </view>
+          <view class="detail">
+            <view class="title">{{item.title}}</view>
+            <view class="author">{{item.creator[0].userName}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

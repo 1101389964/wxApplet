@@ -1,0 +1,7 @@
+<!-- logs.wxml -->
+<view class="container">
+  <block wx:for="{{MVdata}}" wx:key="id">
+    <!-- 注意这里传递数据给绑定的事件，绑定数据的属性必须带有data否则在事件对象中是找不到数据的 -->
+    <MVbox class="mvbox" MVdata="{{item}}" bindtap="skipToDetails" data-id="{{item.id}}"></MVbox>
+  </block>
+</view>

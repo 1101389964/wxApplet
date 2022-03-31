@@ -1,0 +1,40 @@
+function getSizeImage(imgUrl, width, height) {
+  // return `${imgUrl}?param=${width}x${height}`;//不能使用模版字符串
+  return imgUrl + "?param=" + width + "x" + height;
+}
+
+function getCount(num) {
+  if (num == null) return undefined;
+  num = parseInt(num);
+  console.log(num);
+  if (num > 100000000)
+    return (num / 100000000 + (num % 100000000)).toFixed(1) + "亿";
+  else if (num > 10000) return (num / 10000 + (num % 10000)).toFixed(1) + "万";
+  else return num;
+}
+
+function getTime(time) {
+  time = parseInt(time);
+  if (time > 60000) {
+    var m = Math.floor(time / 60 / 1000);
+    var s = Math.floor(time % (1000 * 60)) / 1000;
+    if (m < 10) {
+      m = "0" + m;
+    }
+
+    if (s < 10) {
+      s = "0" + s;
+    }
+    return m + ":" + s;
+  }
+  var s = time / 1000;
+  if (s < 10) return "00:0" + s;
+  else return "00:" + s;
+}
+
+// 由于wxs只支持ES5语法，所以不能使用export导出，只能用commonJS导出
+module.exports = {
+  getSizeImage: getSizeImage,
+  getCount: getCount,
+  getTime: getTime,
+};

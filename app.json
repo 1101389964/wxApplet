@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/movies/index",
+    "pages/music/index",
+    "pages/moview-detail/index"
+    ],
+  "subPackages": [
+    {
+      "root":"package",
+      "pages": [
+        "pages/moview-detail/index"
+      ]
+    }
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#58C66A",
+    "navigationBarTitleText": "Music小程序",
+    "navigationBarTextStyle":"black",
+    "onReachBottomDistance":100
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath": "pages/music/index",
+        "text": "音乐"
+      },
+      { 
+        "pagePath": "pages/movies/index",
+        "text": "视频"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

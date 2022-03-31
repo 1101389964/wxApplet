@@ -1,0 +1,13 @@
+<!-- 倒入wxs文件，并命名该文件名称为format -->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+<view class="content">
+    <view class="img">
+        <image class=".image" src="{{MVdata.cover}}" mode="aspectFit" lazy-load="true" />
+        <view class="info">
+            <!-- 这里需要格式化当前的数据，但是wxml不能直接在Mustache调用需要格式化的函数，这里就需要用到wxs -->
+            <view class="palyNum">{{format.getCount(MVdata.playCount)}}</view>
+            <view class="time">{{format.getTime(MVdata.mv.videos[0].duration)}}</view>
+        </view>
+    </view>
+    <view class="text">{{MVdata.name}}-{{MVdata.artistName}}</view>
+</view>

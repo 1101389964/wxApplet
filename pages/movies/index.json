@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "MVbox":"../../components/mvbox/mv"
+  },
+  "backgroundColor":"#000000",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle":"light"
+}
